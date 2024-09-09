@@ -16,8 +16,6 @@
     <Compile Include="Models\Room.cs" />
     <Compile Include="Models\RoomRate.cs" />
     <Compile Include="Models\RoomType.cs" />
-    <Compile Include="Services\PaymentService.cs" />
-    <Compile Include="Services\ReservationService.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,7 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HotelReservationSystem.Infrastructure\HotelReservationSystem.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

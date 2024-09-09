@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
-using DefaultNamespace;
 using HotelReservationSystem.Core.Models;
 
 namespace HotelReservationSystem.Core.Models
@@ -27,7 +26,7 @@ namespace HotelReservationSystem.Core.Models
         [Required]
         public DateTime CreatedAt { get; set; }
         [ForeignKey("PaymentId")]
-        public int? PaymentId { get; set; }
+        public string PaymentId { get; set; }
         [ForeignKey("CustomerId")]
         public virtual Customer Customer { get; set; }
 

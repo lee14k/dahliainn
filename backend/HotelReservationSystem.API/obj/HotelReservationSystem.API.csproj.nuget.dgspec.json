@@ -108,11 +108,7 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {
-              "/Users/kailee/dahliainn/backend/HotelReservationSystem.Infrastructure/HotelReservationSystem.Infrastructure.csproj": {
-                "projectPath": "/Users/kailee/dahliainn/backend/HotelReservationSystem.Infrastructure/HotelReservationSystem.Infrastructure.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -209,6 +205,10 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[8.0.4, )"
+            },
+            "Square": {
+              "target": "Package",
+              "version": "[38.0.0, )"
             }
           },
           "imports": [

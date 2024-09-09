@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "gjclHVAgK14=",
-  "success": false,
+  "dgSpecHash": "FZgNJlDxPeI=",
+  "success": true,
   "projectFilePath": "/Users/kailee/dahliainn/backend/HotelReservationSystem.API/HotelReservationSystem.API.csproj",
   "expectedPackageFiles": [
     "/Users/kailee/.nuget/packages/apimatic.core/0.4.1/apimatic.core.0.4.1.nupkg.sha512",
@@ -82,15 +82,5 @@
     "/Users/kailee/.nuget/packages/system.threading.tasks.extensions/4.5.4/system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "/Users/kailee/.nuget/packages/system.windows.extensions/5.0.0/system.windows.extensions.5.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1108",
-      "level": "Error",
-      "message": "Cycle detected. \n  HotelReservationSystem.API -> HotelReservationSystem.Infrastructure -> HotelReservationSystem.Core -> HotelReservationSystem.Infrastructure.",
-      "libraryId": "HotelReservationSystem.Infrastructure",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  "logs": []
 }

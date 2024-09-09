@@ -59,11 +59,6 @@ export default function ContactFill() {
         >
           Contact Us
         </h2>
-        <h2
-          className={`text-4xl font-bold tracking-tight text-gray-900 sm:text-7xl ${della.className}`}
-        >
-          Questions? Call (906)-221-5371
-        </h2>
       </div>
       <form
         method="POST"

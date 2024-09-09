@@ -14,11 +14,11 @@ const Footer = ({isMobile}) => {
       ) : (
         <div className="lg:flex flex-col container ml-auto text-center ">
           <div className=" text-center lg:text-right">
-            <h1 className={`${della.className} text-6xl`}>Blue Mystique Inn</h1>
-            <p className="text-3xl">230 Arbutus St, Manistique, MI 49854</p>
+            <h1 className={`ext-6xl`}>Dahlia Inn Inn</h1>
+            <p className="text-3xl">742 Evergreen Terrace, Springfield IL 62704</p>
             <div className="flex flex-col text-xl">
-              <span>(906) 221-5371</span>
-              <span>bluemystiquerentals@gmail.com</span>
+              <span>217-555-9834</span>
+              <span>dahliainn@gmail.com</span>
               <Link href='https://www.facebook.com/bluemystiquerentals'>
                 <FacebookTwoToneIcon fontSize="large"/>
               </Link>

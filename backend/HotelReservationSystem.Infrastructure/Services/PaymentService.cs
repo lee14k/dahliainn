@@ -1,10 +1,13 @@
+using System;
+using System.Collections.Generic;
 using Square;
 using Square.Exceptions;
 using Square.Models;
-using HotelReservationSystem.Core.Interfaces; // Import the interface from Core
-using HotelReservationSystem.Infrastructure.Data; // For database context
+using HotelReservationSystem.Core.Interfaces;
+using HotelReservationSystem.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
+using HotelReservationSystem.Core.Models;
 
 namespace HotelReservationSystem.Infrastructure.Services
 {
@@ -15,11 +18,11 @@ namespace HotelReservationSystem.Infrastructure.Services
 
         public PaymentService(ISquareClient squareClient, ApplicationDbContext dbContext)
         {
-            _squareClient = squareClient;  // Injected Square client
-            _dbContext = dbContext;        // Injected DB context
+            _squareClient = squareClient;
+            _dbContext = dbContext;
         }
 
-        public async Task<PaymentResponse> ProcessPayment(PaymentRequestModel request)
+        public async Task<PaymentResponse> ProcessPayment(PaymentRequest request)
         {
             if (request == null || request.BookingId <= 0)
             {
@@ -33,43 +36,43 @@ namespace HotelReservationSystem.Infrastructure.Services
                 var createPaymentRequest = new CreatePaymentRequest(
                     request.SourceId,
                     Guid.NewGuid().ToString(), // Idempotency key for safe retries
-                    new Money
-                    {
-                        Amount = request.Amount, // Amount in cents
-                        Currency = request.Currency // Currency (e.g., "USD")
-                    }
+                    new Money(request.Amount, request.Currency) // Handle nullable long by providing a default
                 );
 
-                // Send the request to Square and await the response
+                // Send the payment request to Square API
                 var paymentResponse = await paymentsApi.CreatePaymentAsync(createPaymentRequest);
-
-                // Extract the payment ID from the response
                 var paymentId = paymentResponse.Payment.Id;
 
-                // Update the booking record in the database with the payment ID
+                // Find and update the booking in the database
                 var booking = await _dbContext.Bookings.FindAsync(request.BookingId);
                 if (booking == null)
                 {
                     throw new KeyNotFoundException("Booking not found");
                 }
 
-                // Update the booking with the payment ID
-                booking.PaymentId = paymentId; // Ensure PaymentId is a string in your Booking model
+                // Update booking with payment details
+                booking.PaymentId = paymentId;
                 _dbContext.Bookings.Update(booking);
                 await _dbContext.SaveChangesAsync();
 
-                // Return the full Square payment response
-                return paymentResponse;
+                // Return custom payment response model
+                return new PaymentResponse
+                {
+                    Id = paymentResponse.Payment.Id,
+                    Status = paymentResponse.Payment.Status,
+                    Amount = paymentResponse.Payment.AmountMoney.Amount ?? 0,
+                    Currency = paymentResponse.Payment.AmountMoney.Currency
+                };
             }
             catch (ApiException e)
             {
-                // Handle Square API errors
-                throw new PaymentProcessingException("Error processing payment with Square API", e);
+                // Log or handle the Square API exception properly
+                throw new Exception($"Error processing payment with Square API: {e.Message}", e);
             }
             catch (Exception ex)
             {
-                // Handle generic errors
-                throw new PaymentProcessingException("Unexpected error during payment processing", ex);
+                // Handle any other unexpected errors
+                throw new Exception("Unexpected error during payment processing", ex);
             }
         }
     }

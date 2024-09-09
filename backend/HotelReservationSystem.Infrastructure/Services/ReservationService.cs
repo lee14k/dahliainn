@@ -6,7 +6,7 @@ using HotelReservationSystem.Core.Models;
 using HotelReservationSystem.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace HotelReservationSystem.Core.Services
+namespace HotelReservationSystem.Infrastructure.Services
 {
     public class ReservationService : IReservationService
     {
