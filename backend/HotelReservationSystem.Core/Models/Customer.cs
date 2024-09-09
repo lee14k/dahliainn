@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using HotelReservationSystem.Core.Models;
+
 namespace DefaultNamespace;
 
 public class Customer

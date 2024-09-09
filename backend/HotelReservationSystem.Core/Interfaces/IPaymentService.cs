@@ -1,4 +1,4 @@
-namespace DefaultNamespace;
+namespace HotelReservationSystem.Core.Interfaces;
 
 public class IPaymentService
 {

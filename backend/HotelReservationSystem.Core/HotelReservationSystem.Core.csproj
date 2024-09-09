@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework> <!-- Or the target framework you're using -->
+    <AssemblyName>HotelReservationSystem.Core</AssemblyName>
+    <RootNamespace>HotelReservationSystem.Core</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Interfaces\IPaymentService.cs" />
+    <Compile Include="Interfaces\IReservationService.cs" />
+    <Compile Include="Models\Booking.cs" />
+    <Compile Include="Models\BookingStatus.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Payment.cs" />
+    <Compile Include="Models\Room.cs" />
+    <Compile Include="Models\RoomRate.cs" />
+    <Compile Include="Models\RoomType.cs" />
+    <Compile Include="Services\PaymentService.cs" />
+    <Compile Include="Services\ReservationService.cs" />
+  </ItemGroup>
+
+</Project>

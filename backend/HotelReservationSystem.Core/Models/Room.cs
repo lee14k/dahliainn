@@ -1,4 +1,8 @@
-namespace DefaultNamespace;
+using System.Collections.Generic;
+using DefaultNamespace;
+using HotelReservationSystem.Core.Models;
+
+namespace HotelReservationSystem.Core.Models;
 
 public class Room
 {

@@ -1,4 +1,7 @@
-namespace DefaultNamespace;
+using System;
+using System.Collections.Generic;
+namespace HotelReservationSystem.Core.Models;
+
 
 public abstract class BookingStatus:Enumeration
 {

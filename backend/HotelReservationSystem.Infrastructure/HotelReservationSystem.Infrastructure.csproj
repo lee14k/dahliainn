@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework> <!-- Match the version you're using in the API and Core -->
+    <AssemblyName>HotelReservationSystem.Infrastructure</AssemblyName>
+    <RootNamespace>HotelReservationSystem.Infrastructure</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Reference any files inside the Data folder -->
+    <Compile Include="Data\YourDbContext.cs" />  <!-- Replace with your actual files -->
+    <Compile Include="Data\Repositories\YourRepository.cs" /> <!-- Replace with actual repository files -->
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Include any necessary dependencies like Entity Framework -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0" /> <!-- Adjust version as needed -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.0" /> <!-- Adjust for your DB -->
+  </ItemGroup>
+
+</Project>
