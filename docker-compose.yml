@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:80"  # Expose the React app on port 3000
+    depends_on:
+      - backend
+    networks:
+      - hotel-network
+
+  backend:
+    build: ./backend
+    ports:
+      - "5000:80"  # Expose the .NET Core API on port 5000
+    depends_on:
+      - db
+    environment:
+      - ASPNETCORE_URLS=http://+:80
+      - ConnectionStrings__DefaultConnection=Host=db;Database=hotel;Username=postgres;Password=postgres
+    networks:
+      - hotel-network
+
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: hotel
+    volumes:
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./database/seed-data.sql:/docker-entrypoint-initdb.d/seed-data.sql
+    ports:
+      - "5432:5432"
+    networks:
+      - hotel-network
+
+networks:
+  hotel-network:
+    driver: bridge

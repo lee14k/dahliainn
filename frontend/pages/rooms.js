@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import RoomCard from "@/components/RoomCard";
-import { Della_Respira } from "next/font/google";
 import Footer from "@/components/FrontEnd/Footer";
 import Navbar from "@/components/FrontEnd/Navbar";
 import Box from "@mui/material/Box";
@@ -8,7 +7,6 @@ import Modal from "@mui/material/Modal";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import CardMedia from "@mui/material/CardMedia";
-const della = Della_Respira({ subsets: ["latin"], weight: "400" });
 
 export default function Rooms() {
   const [rooms, setRooms] = useState([]);

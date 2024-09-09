@@ -2,13 +2,23 @@ namespace DefaultNamespace;
 
 public class Booking
 {
-    private int BookingId;
-    private int CustomerId;
-    private int RoomId;
-    private DateTime CheckInDate;
-    private DateTime CheckOutDate; 
-    private BookingStatus Status;
-    private DateTime CreatedAt;
-    private int PaymentId;
+    private int BookingId { get; set; }
+    private int CustomerId { get; set; }
+    private int RoomId { get; set; }
+    private DateTime CheckInDate { get; set; }
+    private DateTime CheckOutDate { get; set; }
+    private BookingStatus Status { get; set; }
+    private DateTime CreatedAt { get; set; }
+    private int PaymentId { get; set; }
     private List<Payment> payments = new List<Payment>();
+    public List<Payment> Payments => payments;
+    
+    public void AddPayment(Payment payment)
+    {
+        payments.Add(payment);
+    }
+    public decimal TotalPayments()
+    {
+        return payments.Sum(p => p.Amount);
+    }
 }

@@ -2,12 +2,12 @@ namespace DefaultNamespace;
 
 public class Payment
 {
-    private int PaymentId
-    private int BookingId
-    private decimal  Amount 
-    private decimal  TotalPrice
-    private decimal  SalesTax
-    private decimal  Fees
-    private DateTime PaymentDate
-    private string TransactionLink
+    private int PaymentId { get; set; }
+    private int BookingId { get; set; }
+    private decimal Amount  { get; set; }
+    private decimal TotalPrice { get; set; }
+    private decimal SalesTax { get; set; }
+    private decimal Fees { get; set; }
+    private DateTime PaymentDate { get; set; }
+    private string TransactionLink { get; set; }
 }

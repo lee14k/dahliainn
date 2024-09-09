@@ -1,7 +1,6 @@
 import Image from "next/image";
-import { Della_Respira } from "next/font/google";
-import Link from "next/link";
-const della = Della_Respira({ subsets: ["latin"], weight: "400" });
+
+import { Link } from "react-router-dom";
 import Navbar from "@/components/FrontEnd/Navbar";
 import Footer from "@/components/FrontEnd/Footer";
 
@@ -10,7 +9,7 @@ const FoodHeader = () => {
     <div>
       <Navbar />
       <div
-        className={`ee-bg flex flex-col justify-center items-center pt-24 ${della.className}`}
+        className={`ee-bg flex flex-col justify-center items-center pt-24 `}
       >
         <div className="flex flex-col justify-center items-center text-white text-timer pb-24">
           <h2 className="lg:text-4xl my-4">Celebrate your</h2>
@@ -29,7 +28,7 @@ const FoodHeader = () => {
       <div className="grid lg:grid-cols-2 bg-sky-200 py-24">
         <div className="flex items-center justify-center mx-12">
           <div>
-            <h1 className={`text-6xl  text-center ${della.className}`}>
+            <h1 className={`text-6xl  text-center`}>
               Boutique event space located in Manistique, Michigan
             </h1>
             <p className="my-8 text-2xl mx-12">
@@ -40,7 +39,7 @@ const FoodHeader = () => {
               drinks at your event. Contact us today to book your event at The
               Blue Mystique Inn.
             </p>
-            <div className={`${della.className}`}>
+            <div>
               <button className="bg-white rounded-2xl px-12 py-2 mx-16 my-10 text-4xl">
                 <Link href="/contact">Contact Us</Link>
               </button>
