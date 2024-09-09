@@ -1,15 +1,17 @@
 using System;
 using System.Collections.Generic;
-namespace DefaultNamespace;
 
-public class Payment
+namespace HotelReservationSystem.Core.Models
 {
-    private int PaymentId { get; set; }
-    private int BookingId { get; set; }
-    public decimal Amount  { get; set; }
-    private decimal TotalPrice { get; set; }
-    private decimal SalesTax { get; set; }
-    private decimal Fees { get; set; }
-    private DateTime PaymentDate { get; set; }
-    private string TransactionLink { get; set; }
+    public class Payment
+    {
+        public int PaymentId { get; set; }
+        public int BookingId { get; set; }
+        public decimal Amount { get; set; }
+        public decimal TotalPrice { get; set; }
+        public decimal SalesTax { get; set; }
+        public decimal Fees { get; set; }
+        public DateTime PaymentDate { get; set; }
+        public string TransactionLink { get; set; }
+    }
 }

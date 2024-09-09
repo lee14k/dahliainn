@@ -8,14 +8,19 @@
 
   <ItemGroup>
     <!-- Reference any files inside the Data folder -->
-    <Compile Include="Data\YourDbContext.cs" />  <!-- Replace with your actual files -->
+    <Compile Include="Data\ApplicationDbContext.cs" />  <!-- Replace with your actual files -->
     <Compile Include="Data\Repositories\YourRepository.cs" /> <!-- Replace with actual repository files -->
   </ItemGroup>
 
   <ItemGroup>
     <!-- Include any necessary dependencies like Entity Framework -->
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0" /> <!-- Adjust version as needed -->
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.0" /> <!-- Adjust for your DB -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8" /> <!-- Adjust version as needed -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" /> <!-- Adjust for your DB -->
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HotelReservationSystem.Core\HotelReservationSystem.Core.csproj" />
   </ItemGroup>
 
 </Project>

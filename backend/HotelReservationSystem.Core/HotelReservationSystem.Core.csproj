@@ -20,4 +20,12 @@
     <Compile Include="Services\ReservationService.cs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HotelReservationSystem.Infrastructure\HotelReservationSystem.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using DefaultNamespace;
 using HotelReservationSystem.Core.Models;
@@ -8,14 +10,29 @@ namespace HotelReservationSystem.Core.Models
 {
     public class Booking
     {
-        private int BookingId { get; set; }
-        private int CustomerId { get; set; }
-        private int RoomId { get; set; }
-        private DateTime CheckInDate { get; set; }
-        private DateTime CheckOutDate { get; set; }
-        private BookingStatus Status { get; set; }
-        private DateTime CreatedAt { get; set; }
-        private int PaymentId { get; set; }
+        [Key]
+        public int BookingId { get; set; }
+        [Required]
+        public int CustomerId { get; set; }        
+        [Required]
+        public int RoomId { get; set; }
+        [Required]
+        public DateTime CheckInDate { get; set; }
+        [Required]
+        public DateTime CheckOutDate { get; set; }
+
+        [Required]
+        public BookingStatus Status { get; set; }
+
+        [Required]
+        public DateTime CreatedAt { get; set; }
+        [ForeignKey("PaymentId")]
+        public int? PaymentId { get; set; }
+        [ForeignKey("CustomerId")]
+        public virtual Customer Customer { get; set; }
+
+        [ForeignKey("RoomId")]
+        public virtual Room Room { get; set; }
         private List<Payment> payments = new List<Payment>();
         public List<Payment> Payments => payments;
 
