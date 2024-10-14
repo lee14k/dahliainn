@@ -1,0 +1,3 @@
+/Volumes/[C] Windows 11/Users/kailee/source/repos/dahliav2/dahliav2.client/obj/Debug/dahliav2.client.esproj.CoreCompileInputs.cache
+/Users/kailee/dahliav2/dahliav2.client/obj/Debug/dahliav2.client.esproj.CoreCompileInputs.cache
+/Users/kailee/dahliainnv2/dahliav2.client/obj/Debug/dahliav2.client.esproj.CoreCompileInputs.cache
