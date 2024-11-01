@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("dahliav2.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2cca129bed1c4ab9d67fe0d777ddfa8cd0f31df9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9ff6d4a8321146ee4aaafe11143b8d68e148164a")]
 [assembly: System.Reflection.AssemblyProductAttribute("dahliav2.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("dahliav2.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
